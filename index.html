@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graduation Celebration 🎓</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: galaxyMove 12s ease infinite;
+}
+
+@keyframes galaxyMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 65px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, orange, skyblue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.img-box {
+    background: rgba(255,255,255,0.08);
+    border: 2px dashed skyblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: orange;
+    backdrop-filter: blur(5px);
+}
+
+/* Placeholder sizes */
+.img-1 { width: 400px; height: 300px; }
+.img-2 { width: 300px; height: 300px; }
+.img-3 { width: 500px; height: 250px; }
+.img-4 { width: 350px; height: 200px; }
+
+/* Star sparkle effect */
+.star {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<section>
+    <h1>🎓 CONGRATULATIONS 🎓</h1>
+    <h2>You Graduated!</h2>
+    <p>Your journey through challenges and success has shaped your future.</p>
+</section>
+
+<section>
+    <h2>📸 Graduation Moments</h2>
+    <div class="gallery">
+        <div class="img-box img-1">400 x 300</div>
+        <div class="img-box img-2">300 x 300</div>
+        <div class="img-box img-3">500 x 250</div>
+    </div>
+</section>
+
+<section>
+    <h2>🌟 Achievements</h2>
+    <p>Every test passed. Every project completed. Every dream closer.</p>
+    <div class="gallery">
+        <div class="img-box img-4">350 x 200</div>
+        <div class="img-box img-1">400 x 300</div>
+    </div>
+</section>
+
+<section>
+    <h2>🚀 The Future Awaits</h2>
+    <p>This is only the beginning of your next great adventure.</p>
+    <div class="gallery">
+        <div class="img-box img-3">500 x 250</div>
+        <div class="img-box img-2">300 x 300</div>
+    </div>
+</section>
+
+<section>
+    <h2>🎉 Proud of You!</h2>
+    <p>Keep shining like the stars in this galaxy.</p>
+</section>
+
+<script>
+// Create star field
+for(let i = 0; i < 80; i++){
+    let star = document.createElement("div");
+    star.classList.add("star");
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    document.body.appendChild(star);
+}
+</script>
+
+</body>
+</html>
