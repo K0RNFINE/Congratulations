@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graduation Celebration 🎓</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none; /* ❌ disable text selection */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2c2c54, #474787);
+    background-size: 400% 400%;
+    animation: bgMove 10s infinite alternate;
+    color: white;
+    overflow-x: hidden;
+}
+
+@keyframes bgMove {
+    0% { background-position: left; }
+    100% { background-position: right; }
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    background: linear-gradient(to right, gold, orange, pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.img-box {
+    background: rgba(255,255,255,0.1);
+    border: 3px dashed gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: gold;
+}
+
+/* Different placeholder sizes */
+.img-1 { width: 400px; height: 300px; }
+.img-2 { width: 300px; height: 300px; }
+.img-3 { width: 500px; height: 250px; }
+.img-4 { width: 350px; height: 200px; }
+.img-5 { width: 600px; height: 350px; }
+
+/* Decorative confetti effect */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: gold;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100px) rotate(0deg); }
+    100% { transform: translateY(120vh) rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+
+<section>
+    <h1>🎓 CONGRATULATIONS 🎓</h1>
+    <h2>You Did It!</h2>
+    <p>Your hard work, sleepless nights, and dedication have paid off.</p>
+</section>
+
+<section>
+    <h2>📸 Graduation Memories</h2>
+    <div class="gallery">
+        <div class="img-box img-1">400 x 300</div>
+        <div class="img-box img-2">300 x 300</div>
+        <div class="img-box img-3">500 x 250</div>
+        <div class="img-box img-4">350 x 200</div>
+        <div class="img-box img-5">600 x 350</div>
+        <div class="img-box img-2">300 x 300</div>
+        <div class="img-box img-1">400 x 300</div>
+        <div class="img-box img-3">500 x 250</div>
+    </div>
+</section>
+
+<section>
+    <h2>🌟 Achievement Section</h2>
+    <p>From your first class to your final exam — every step mattered.</p>
+    <div class="gallery">
+        <div class="img-box img-5">600 x 350</div>
+        <div class="img-box img-4">350 x 200</div>
+        <div class="img-box img-1">400 x 300</div>
+        <div class="img-box img-2">300 x 300</div>
+    </div>
+</section>
+
+<section>
+    <h2>🚀 The Future Starts Now</h2>
+    <p>This is not the end — it's the beginning of something greater.</p>
+    <div class="gallery">
+        <div class="img-box img-3">500 x 250</div>
+        <div class="img-box img-5">600 x 350</div>
+        <div class="img-box img-2">300 x 300</div>
+        <div class="img-box img-4">350 x 200</div>
+        <div class="img-box img-1">400 x 300</div>
+    </div>
+</section>
+
+<section>
+    <h2>🎉 Proud of You!</h2>
+    <p>May success follow you wherever you go.</p>
+</section>
+
+<script>
+// Create falling confetti
+for(let i = 0; i < 40; i++){
+    let confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    confetti.style.opacity = Math.random();
+    document.body.appendChild(confetti);
+}
+</script>
+
+</body>
+</html>
