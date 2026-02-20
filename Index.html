@@ -10,83 +10,85 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none; /* ❌ disable text selection */
+    user-select: none;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e1e2f, #2c2c54, #474787);
-    background-size: 400% 400%;
-    animation: bgMove 10s infinite alternate;
     color: white;
     overflow-x: hidden;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: galaxyMove 12s ease infinite;
 }
 
-@keyframes bgMove {
-    0% { background-position: left; }
-    100% { background-position: right; }
+@keyframes galaxyMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
 h1 {
-    font-size: 60px;
-    background: linear-gradient(to right, gold, orange, pink);
+    font-size: 65px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, orange, skyblue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 36px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 p {
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    opacity: 0.9;
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .img-box {
-    background: rgba(255,255,255,0.1);
-    border: 3px dashed gold;
+    background: rgba(255,255,255,0.08);
+    border: 2px dashed skyblue;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 18px;
-    color: gold;
+    color: orange;
+    backdrop-filter: blur(5px);
 }
 
-/* Different placeholder sizes */
+/* Placeholder sizes */
 .img-1 { width: 400px; height: 300px; }
 .img-2 { width: 300px; height: 300px; }
 .img-3 { width: 500px; height: 250px; }
 .img-4 { width: 350px; height: 200px; }
-.img-5 { width: 600px; height: 350px; }
 
-/* Decorative confetti effect */
-.confetti {
+/* Star sparkle effect */
+.star {
     position: fixed;
-    width: 10px;
-    height: 10px;
-    background: gold;
-    animation: fall linear infinite;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
 }
 
-@keyframes fall {
-    0% { transform: translateY(-100px) rotate(0deg); }
-    100% { transform: translateY(120vh) rotate(360deg); }
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
 }
 </style>
 </head>
@@ -95,61 +97,51 @@ p {
 
 <section>
     <h1>🎓 CONGRATULATIONS 🎓</h1>
-    <h2>You Did It!</h2>
-    <p>Your hard work, sleepless nights, and dedication have paid off.</p>
+    <h2>You Graduated!</h2>
+    <p>Your journey through challenges and success has shaped your future.</p>
 </section>
 
 <section>
-    <h2>📸 Graduation Memories</h2>
+    <h2>📸 Graduation Moments</h2>
     <div class="gallery">
         <div class="img-box img-1">400 x 300</div>
         <div class="img-box img-2">300 x 300</div>
-        <div class="img-box img-3">500 x 250</div>
-        <div class="img-box img-4">350 x 200</div>
-        <div class="img-box img-5">600 x 350</div>
-        <div class="img-box img-2">300 x 300</div>
-        <div class="img-box img-1">400 x 300</div>
         <div class="img-box img-3">500 x 250</div>
     </div>
 </section>
 
 <section>
-    <h2>🌟 Achievement Section</h2>
-    <p>From your first class to your final exam — every step mattered.</p>
+    <h2>🌟 Achievements</h2>
+    <p>Every test passed. Every project completed. Every dream closer.</p>
     <div class="gallery">
-        <div class="img-box img-5">600 x 350</div>
         <div class="img-box img-4">350 x 200</div>
         <div class="img-box img-1">400 x 300</div>
-        <div class="img-box img-2">300 x 300</div>
     </div>
 </section>
 
 <section>
-    <h2>🚀 The Future Starts Now</h2>
-    <p>This is not the end — it's the beginning of something greater.</p>
+    <h2>🚀 The Future Awaits</h2>
+    <p>This is only the beginning of your next great adventure.</p>
     <div class="gallery">
         <div class="img-box img-3">500 x 250</div>
-        <div class="img-box img-5">600 x 350</div>
         <div class="img-box img-2">300 x 300</div>
-        <div class="img-box img-4">350 x 200</div>
-        <div class="img-box img-1">400 x 300</div>
     </div>
 </section>
 
 <section>
     <h2>🎉 Proud of You!</h2>
-    <p>May success follow you wherever you go.</p>
+    <p>Keep shining like the stars in this galaxy.</p>
 </section>
 
 <script>
-// Create falling confetti
-for(let i = 0; i < 40; i++){
-    let confetti = document.createElement("div");
-    confetti.classList.add("confetti");
-    confetti.style.left = Math.random() * 100 + "vw";
-    confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
-    confetti.style.opacity = Math.random();
-    document.body.appendChild(confetti);
+// Create star field
+for(let i = 0; i < 80; i++){
+    let star = document.createElement("div");
+    star.classList.add("star");
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    document.body.appendChild(star);
 }
 </script>
 
