@@ -17,7 +17,6 @@ body {
     font-family: sans-serif;
     color: white;
 }
-
 canvas {
     background: #1e1e1e;
     border: 2px solid white;
@@ -36,20 +35,18 @@ const ctx = canvas.getContext("2d");
 const width = canvas.width;
 const height = canvas.height;
 
-// สร้างข้อมูลตัวอย่าง
 const data = [20, 60, 40, 80, 30, 90, 70, 100];
 
 // วาดแกน
 ctx.strokeStyle = "white";
 ctx.lineWidth = 2;
-
 ctx.beginPath();
 ctx.moveTo(50, 20);
 ctx.lineTo(50, height - 50);
 ctx.lineTo(width - 20, height - 50);
 ctx.stroke();
 
-// วาดกราฟเส้น
+// ===== วาดเส้นกราฟ =====
 ctx.strokeStyle = "lime";
 ctx.lineWidth = 3;
 ctx.beginPath();
@@ -63,20 +60,20 @@ for (let i = 0; i < data.length; i++) {
     } else {
         ctx.lineTo(x, y);
     }
+}
 
-    // วาดจุด
+ctx.stroke(); // ต้อง stroke ก่อนจะวาดจุด
+
+// ===== วาดจุด =====
+for (let i = 0; i < data.length; i++) {
+    let x = 50 + i * 70;
+    let y = height - 50 - data[i] * 3;
+
     ctx.fillStyle = "red";
     ctx.beginPath();
     ctx.arc(x, y, 5, 0, Math.PI * 2);
     ctx.fill();
 }
-
-ctx.stroke();
-
-// เขียนชื่อด้านล่าง
-ctx.fillStyle = "white";
-ctx.font = "16px sans-serif";
-ctx.fillText("ระดับพลัง", width/2 - 40, height - 10);
 
 </script>
 
